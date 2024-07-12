@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
+    border: 1px solid red;
 }
 
 :root {
@@ -13,11 +14,11 @@
 main {
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
 }
 
 p {
-    margin-top:8px;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
@@ -28,7 +29,7 @@ p {
 body {
     display: flex;
     justify-content: center;
-    margin:0px;
+    margin: 0px;
 }
 
 .main-container {
@@ -53,7 +54,7 @@ a {
 
 .section-content {
     margin: 0px;
-    font-size: 16px;  
+    font-size: 16px;
 }
 
 .weight {
@@ -137,7 +138,7 @@ nav a:hover {
 }
 
 .card-subtitle {
-    font-size: 14px; 
+    font-size: 14px;
     margin: 0px
 }
 
@@ -152,26 +153,32 @@ nav a:hover {
 /*** search ***/
 
 .search {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 30px;
 }
 
 .search-bar {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     height: 50px;
+    max-width: 377px;
+    box-sizing: border-box;
+}
+
+.search-bar .fa-magnifying-glass {
+    display: none;
 }
 
 .title {
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.search-bar .icon {
+.search-bar .fa-location-dot {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,8 +225,9 @@ nav a:hover {
 /** Filters **/
 
 .filter {
-    display:flex;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
     font-size: 17px;
@@ -233,7 +241,7 @@ nav a:hover {
     background-color: white;
     border: solid 2px var(--filter-border-color);
     border-radius: 25px;
-    padding: 0px 17px 0px 17px; 
+    padding: 0px 17px 0px 17px;
     gap: 10px;
 }
 
@@ -361,12 +369,12 @@ nav a:hover {
 .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
-    
+
 }
 
 .populaires-cards .card-subtitle {
     margin: 0;
-    
+
 }
 
 .populaires-cards .card-rating {
@@ -392,6 +400,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
 }
 
@@ -400,7 +409,7 @@ nav a:hover {
     flex-direction: column;
     width: 22%;
     padding: 0px;
-    }
+}
 
 .activities-cards img {
     display: flex;
@@ -438,6 +447,7 @@ nav a:hover {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .populaires-cards a {
@@ -460,47 +470,101 @@ nav a:hover {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
 
+    .main-container {
+        padding: 0 5%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .activities-cards .card {
+        width: 100%;
+    }
+
     .activities-cards img {
         height: 141px;
     }
 
+    .hebergements-cards a {
+        width: 100%;
+    }
+
+    .populaires-cards a {
+        width: 100%;
+    }
+
     .search-bar {
-        display:flex;
+        display: flex;
         flex-direction: row;
         align-items: center;
         height: 50px;
-        width: 377px;
+        justify-content: center;
+        box-sizing: border-box;
     }
+
+    .search-bar .btn {
+        display: none;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .search-bar .fa-magnifying-glass {
+        display: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        background-color: var(--main-color);
+        border-radius: 0px 15px 15px 0px;
+        border: none;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 18px;
+    }
+
 
     nav a {
         padding-bottom: 17px;
         padding-left: 30px;
         padding-right: 30px;
+        margin: 0;
     }
 
     nav a:hover {
         color: var(--main-color);
         border-bottom: 2px solid var(--main-color);
+        border-top: none;
         padding-bottom: 15px;
     }
 
     .filter {
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
         font-size: 17px;
+        width: 100%;
+        max-width: 377px;
     }
 
-    .filter p{
-        width: 270px;
+    .filter .btn {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     footer {
         flex-direction: column;
     }
+
     .search {
         align-items: center;
     }
 
+    .desc.filter {
+        flex-direction: row;
+    }
 }
